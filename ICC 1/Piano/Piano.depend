@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1491872648 source:c:\users\pedro natali\desktop\piano\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<windows.h>
+
+1498678912 source:c:\users\pedro natali\desktop\programação em c\piano\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<windows.h>
+
