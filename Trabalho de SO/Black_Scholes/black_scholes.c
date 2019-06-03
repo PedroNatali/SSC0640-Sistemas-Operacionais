@@ -18,10 +18,10 @@ double black_scholes(){
 	double vari, conf_min, conf_max, stddev, max, itv_conf;
 	//pegando os valores do arquivo de entrada
 	scanf("%lf %lf %lf %lf %lf %d ", &S, &E, &r, &sigma, &T, &M);
-	double trials[M - 1], media;
+	double trials[M], media;
 	srand(time(NULL));
 
-	for(i = 0; i < M - 1; i++){
+	for(i = 0; i < M; i++){
 
 		aux1 = T*(r - 0.5*sigma*sigma);
 		//printf("aux1 %d = %lf\n",i, aux1);
@@ -49,19 +49,19 @@ double black_scholes(){
 	}
 
 	//calculando a media
-	for(i = 0 ; i < M - 1 ; i++){
+	for(i = 0 ; i < M ; i++){
 		soma = soma + trials[i];
 	} 
-	media = soma/(M - 1);
+	media = soma/(double)M;
 
 	//calculando a variancia e o desvio padrao
-	for(i = 0 ; i < M - 1; i++){
+	for(i = 0 ; i < M; i++){
         soma2 = soma2 + ((trials[i]-media)*(trials[i]-media));
     }
-    vari = soma2/M - 1;
+    vari = soma2/(double)M;
     stddev = sqrt(vari);
 
-	itv_conf = (1.96*stddev)/(double)(sqrt(M - 1));
+	itv_conf = (1.96*stddev)/(double)(sqrt(M));
 	conf_min = media - itv_conf;
 	conf_max = media + itv_conf;
 
