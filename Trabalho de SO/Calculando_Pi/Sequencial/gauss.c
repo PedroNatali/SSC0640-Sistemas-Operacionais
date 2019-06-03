@@ -8,7 +8,7 @@
 #include <time.h>
 #include <gmp.h>    
 
-void gauss(int numero_interacoesG){
+void gauss(int numero_iteracoesG){
     //definindo a precisao
     mpf_set_default_prec(pow(10,5));
 
@@ -44,7 +44,7 @@ void gauss(int numero_interacoesG){
     //double pi;
     //double a_prox, b_prox, t_prox, aux_1, aux_2;
     
-    for(i = 0; i < numero_interacoesG; i++){
+    for(i = 0; i < numero_iteracoesG; i++){
         //a_prox = (a + b)/2 - calcula a(n+1)
         mpf_add(aux, a, b);
         mpf_div_ui(a_prox,aux,2);
@@ -86,12 +86,12 @@ void gauss(int numero_interacoesG){
 
     //pi = aux 4 / aux 5 = pow(aux2, 2) / 4 * t
     mpf_div(pi, aux_4,aux_5);
-    gmp_printf("%.6Ff \n", pi);
+    gmp_printf("Gauss : %.6Ff\n", pi);
 }
 
 int main (){
-    int num_intg = 100000; //numero maximo que o Gauss roda
+    int num_itg = 100000; //numero maximo que o Gauss roda
     //printf("Gauss: %1.6f\n", gauss(num_intg));
-    gauss(num_intg); 
+    gauss(num_itg); 
     return 0;
 }
