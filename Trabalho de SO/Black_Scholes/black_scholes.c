@@ -12,7 +12,7 @@
 double black_scholes(){
 	int i, M;
 	double S, E, r, sigma, T;
-	double aux1,aux2,aux3,aux4,aux5,aux6,aux7,t;
+	double aux1,aux2,aux4,aux5,aux6,aux7,t;
 	double soma= 0;
 	double soma2 = 0;
 	double vari, conf_min, conf_max, stddev, max, itv_conf;
@@ -27,9 +27,7 @@ double black_scholes(){
 		//printf("aux1 %d = %lf\n",i, aux1);
 		aux2 = sigma*sqrt(T);
 		//printf("aux2 %d = %lf\n",i, aux2);
-		aux3 = rand()%101;
-		//printf("aux3 %d = %lf\n",i, aux3);
-		aux4 = aux3/100;
+		aux4 = ((double)rand()/(double)RAND_MAX);
 		//printf("aux4 %d = %lf\n",i, aux4);
 		aux5 = aux2*aux4;
 		//printf("aux5 %d = %lf\n",i, aux5);
@@ -63,7 +61,7 @@ double black_scholes(){
     vari = soma2/M - 1;
     stddev = sqrt(vari);
 
-	itv_conf = (1.96*stddev)/(sqrt(M - 1));
+	itv_conf = (1.96*stddev)/(double)(sqrt(M - 1));
 	conf_min = media - itv_conf;
 	conf_max = media + itv_conf;
 

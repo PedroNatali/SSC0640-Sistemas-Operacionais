@@ -18,10 +18,8 @@ double monte_carlo(int numero_interacoesM){
 
 
 	for(ptos = 0; ptos < numero_interacoesM; ptos++){
-		x = (rand()%101);
-		x = x/100; // encontra 0<x<1
-		y = (rand()%101);
-		y = y/100; // encontra 0<y<1
+		x = ((double)rand()/(double)RAND_MAX); 
+		y = ((double)rand()/(double)RAND_MAX);
 		if(pow(x,2) + pow(y,2) <= 1){
 			pto_dentro = pto_dentro + 1; //atualiza os pontos dentro do círculo se x²+y² <= 1 (definição)
 		}
