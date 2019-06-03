@@ -31,6 +31,6 @@ double monte_carlo(int numero_interacoesM){
 }
 int main (){
     int num_int = 1000000000; //numero desejado para as interações 
-    printf("Monte Carlo: %1.6f\n", monte_carlo(num_intg));
+    printf("Monte Carlo: %1.6f\n", monte_carlo(num_int));
     return 0;
 }
