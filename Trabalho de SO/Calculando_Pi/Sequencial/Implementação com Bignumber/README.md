@@ -2,12 +2,12 @@
 
 Implementação dos três métodos numéricos(Borwein, Gauss e Monte Carlo) com a utilização da biblioteca gmp (bignumber). 
 
-Para compilar o programa:
+Método de Compilação:
 ```
 gcc nome_programa.c -o nome_programa -lm -lgmp
 ```
 
-Para executar o programa:
+Método de Execução:
 ```
 ./nome_programa
 ```
