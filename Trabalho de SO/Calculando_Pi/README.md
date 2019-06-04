@@ -1,6 +1,6 @@
 # Calculando o Pi
 
-Foram implementados três métodos numéricos para cálculo de pi com precisão.
+Foram implementados três métodos numéricos(Gauss, Borwein e Monte Carlo) para cálculo de pi com precisão.
 
 ## Sequencialmente
 
