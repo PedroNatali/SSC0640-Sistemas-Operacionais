@@ -13,5 +13,10 @@ Trabalho desenvolvido ao longo da disciplina Sistemas Operacionais SSC0640 no an
 1. Implementação com Threads
 
 ## Método de Black Scholes
-1. Sequencial
-2. Paralela
+### Sequencial
+
+1. Implementação sem Bignumber
+
+### Paralela
+
+1. Implementação com Threads
