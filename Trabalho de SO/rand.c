@@ -18,11 +18,14 @@ unsigned int next(unsigned int x)
 int main()
 {
 	unsigned int x = time(NULL);
+	double y;
 	
 	for (int i = 0; i < 100; ++i)
 	{
 		x = next(x);
-		printf("%u\n", x);
+		y = (double)x/8000000000;
+
+		printf("%f\n", y);
 	}
 	
 	return 0;

@@ -29,7 +29,6 @@ void borwein(int numero_interacoesB){
 	mpf_init(aux9);
 
 	//setando algumas variaveis
-
 	mpf_init_set_ui(n_1,1);
 	mpf_init_set_ui(n_2,2);
 	mpf_init_set_ui(n_4,4);
@@ -75,6 +74,18 @@ void borwein(int numero_interacoesB){
 	}
 
     gmp_printf("Borwein : %.6Ff\n", pi);
+
+    mpf_clear(pi);
+	mpf_clear(i8);
+	mpf_clear(aux);
+	mpf_clear(aux2);
+	mpf_clear(aux3);
+	mpf_clear(aux4);
+	mpf_clear(aux5);
+	mpf_clear(aux6);
+	mpf_clear(aux7);
+	mpf_clear(aux8);
+	mpf_clear(aux9);
 
 }
 

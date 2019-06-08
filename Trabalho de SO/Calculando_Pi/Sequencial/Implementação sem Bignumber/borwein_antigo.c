@@ -26,6 +26,7 @@ double borwein(int numero_interacoesB){
 }
 
 int main (){
-    int num_int = 1000000000; //numero desejado para as interações 
+    int num_int = 100000; //numero desejado para as interações 
     printf("Borwein: %1.6f\n", borwein(num_int));
     return 0;
+}

@@ -36,13 +36,6 @@ void gauss(int numero_iteracoesG){
 
     //iterador
     int i;
-
-    //double a = 1;
-    //double b = 1/sqrt(2);
-    //double t = 0.25;
-    //double p = 1;
-    //double pi;
-    //double a_prox, b_prox, t_prox, aux_1, aux_2;
     
     for(i = 0; i < numero_iteracoesG; i++){
         //a_prox = (a + b)/2 - calcula a(n+1)
@@ -68,10 +61,6 @@ void gauss(int numero_iteracoesG){
         mpf_set(a,a_prox);
         mpf_set(b,b_prox);
         mpf_set(t,t_prox);
-
-        //a = a_prox;
-        //b = b_prox;
-        //t = t_prox;
     }
     //calcula pi
 
@@ -79,7 +68,7 @@ void gauss(int numero_iteracoesG){
     mpf_add(aux_2, a, b);
 
     //aux 4 = aux2²
-    mpf_pow_ui(aux_4, aux_2, 2);
+    mpf_mul(aux_4, aux_2, aux_2);
 
     //aux 5 = 4*t
     mpf_mul_ui(aux_5,t, 4);
@@ -90,8 +79,7 @@ void gauss(int numero_iteracoesG){
 }
 
 int main (){
-    int num_itg = 100000; //numero maximo que o Gauss roda
-    //printf("Gauss: %1.6f\n", gauss(num_intg));
+    int num_itg = 10000;
     gauss(num_itg); 
     return 0;
 }
