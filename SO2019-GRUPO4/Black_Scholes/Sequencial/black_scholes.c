@@ -1,15 +1,13 @@
 	/* Pedro Natali - 10310655
 - Para compilação no linux, utilizar -lm. 
-- gcc nome_programa.c -o nome_programa - lm -lpthread*/
+- gcc nome_programa.c -o nome_programa - lm */
 
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
 #include <time.h>
-#include <pthread.h>
 
-
-double black_scholes(){
+void black_scholes(){
 	int i, M;
 	double S, E, r, sigma, T;
 	double aux1,aux2,aux4,aux5,aux6,aux7,t;
@@ -36,7 +34,7 @@ double black_scholes(){
 
 		t = S*pow(M_E, aux6); //aqui foi calculado t, temporario.
 		
-		//nao sei fazer essa parte, tentar fazer depois
+		//max{t-E, 0}
 		if(t-E > 0){
         	max = t-E;
 		}else{
@@ -61,14 +59,20 @@ double black_scholes(){
     vari = soma2/(double)M;
     stddev = sqrt(vari);
 
+    //calculando o intervalo de confianca
 	itv_conf = (1.96*stddev)/(double)(sqrt(M));
 	conf_min = media - itv_conf;
 	conf_max = media + itv_conf;
 
-	printf("%lf\n", conf_min);
-	printf("%lf\n", conf_max);
 
-	return 0;
+	//imprimindo o intervalo de confianca
+	printf("S        %0.lf\n",S);
+	printf("E        %0.lf\n",E);
+	printf("r        %0.lf\n",r);
+	printf("sigma    %0.lf\n",sigma);
+	printf("T        %0.lf\n",T);
+	printf("M        %d\n",M);
+	printf("Confidence interval: (%lf,%lf)\n", conf_min,conf_max);
 
 }
 
